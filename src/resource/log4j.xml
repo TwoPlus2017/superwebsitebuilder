@@ -70,7 +70,7 @@
 	-->
 	<!-- Root Logger -->
 	<root>
-		<level value="ERROR"></level>
+		<level value="DEBUG"></level>
 		<appender-ref ref="console" />
 		<!-- <appender-ref ref="DEFAULT-APPENDER" />
 		<appender-ref ref="ERROR-APPENDER" />-->
