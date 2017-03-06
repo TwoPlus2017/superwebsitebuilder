@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project name="superwebsitebuilder" default="compile" basedir=".">
+        <!-- Source file location. -->
+        <property name="src" value="src" />
+
+        <!-- Destination directory for .class files. -->
+        <property name="classes" value="WebContent/WEB-INF/classes" />
+
+        <!-- Classpath for the build and JavaDoc. -->
+        <path id="project.class.path">
+            <fileset dir="WebContent/WEB-INF/lib" includes="**/*.jar"/>
+        </path>
+
+        <!-- compile -->
+        <target name="compile">
+        <mkdir dir="${classes}"/>
+        <javac srcdir="${src}" destdir="${classes}" includeantruntime="false">
+          <classpath refid="project.class.path" />
+        </javac>
+    </target>
+</project>
