@@ -6,11 +6,15 @@
  */
 package com.superwebsitebuilder.espider.util;
 
+import java.net.Inet4Address;
 import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -410,7 +414,7 @@ public class Utils {
 		String domainUrl = Constants.EMPTY_STRING;
 		String osName = System.getProperty("os.name");
 		String hostName = getHostName(getInetAddress());
-		String hostIP = getHostIP(getInetAddress());
+		String hostIP = getHostIP(getRealInetAddress());
 		
 		logger.debug("hostIP =================================" + hostIP);
 		
@@ -450,6 +454,29 @@ public class Utils {
         }
 		
         return null;
+    }
+	
+	public static InetAddress getRealInetAddress() {
+		InetAddress inetAddress = null;
+        try {
+            Enumeration<NetworkInterface> networkInterfaces = NetworkInterface
+                    .getNetworkInterfaces();
+            while (networkInterfaces.hasMoreElements()) {
+                NetworkInterface ni = (NetworkInterface) networkInterfaces
+                        .nextElement();
+                Enumeration<InetAddress> nias = ni.getInetAddresses();
+                while(nias.hasMoreElements()) {
+                    InetAddress ia= (InetAddress) nias.nextElement();
+                    if (!ia.isLinkLocalAddress() 
+                     && !ia.isLoopbackAddress()
+                     && ia instanceof Inet4Address) {
+                    	inetAddress = ia;
+                    }
+                }
+            }
+        } catch (SocketException e) {
+        }
+        return inetAddress;
     }
 	
 	/**
