@@ -26,7 +26,6 @@ import org.apache.commons.logging.LogFactory;
 import com.superwebsitebuilder.applicationLevel.manager.AdminConfigManagerIfc;
 import com.superwebsitebuilder.espider.constant.Constants;
 import com.superwebsitebuilder.espider.constant.WebSiteLevelConstants;
-import com.superwebsitebuilder.platform.listener.InitSuperWebSiteApplicatLevelListener;
 import com.superwebsitebuilder.websitelevel.data.websitefunction.WebSiteData;
 
 /**
@@ -423,7 +422,7 @@ public class Utils {
 			if (osName.equalsIgnoreCase(WebSiteLevelConstants.Host_Linux)) {
 				// PROD host
 				if (hostName.equalsIgnoreCase(acManager.getHostAndApplicationProperty().getHostName()) 
-						&& hostIP.equalsIgnoreCase(acManager.getHostAndApplicationProperty().getHostIP())) {
+						&& acManager.getHostAndApplicationProperty().getHostIP().contains(hostIP)) {
 					
 					domainUrl = wsData.getDomainName();
 				
