@@ -17,6 +17,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.web.context.ServletContextAware;
 
+import com.superwebsitebuilder.applicationLevel.data.websitefunction.HostConfigPropertyData;
 import com.superwebsitebuilder.applicationLevel.data.websitefunction.SensitiveWordData;
 import com.superwebsitebuilder.applicationLevel.manager.AdminConfigManagerIfc;
 import com.superwebsitebuilder.espider.util.Utils;
@@ -52,6 +53,8 @@ public class InitSuperWebSiteApplicatLevelListener implements InitializingBean, 
 	private AdminConfigManagerIfc acManager;
 	@Resource
 	private DAOFacade daoFacade;
+	@Resource
+	private HostConfigPropertyData hostConfigData;
 
 	/**
 	 * @see org.springframework.web.context.ServletContextAware#setServletContext(javax.servlet.ServletContext)
@@ -65,6 +68,8 @@ public class InitSuperWebSiteApplicatLevelListener implements InitializingBean, 
 			cacheFactory.createCache(CacheFactory.ADMIN_CONFIG_MAP);
 			
 			preparingAdminConfigCache();
+			
+			preparingHostConfigInfo();
 			
 		} catch (Exception e) {
 			logger.debug("InitSuperWebSiteApplicatLevelListener --> setServletContext() --> " + e.getMessage());
@@ -88,6 +93,16 @@ public class InitSuperWebSiteApplicatLevelListener implements InitializingBean, 
 			
 			adminConfigMap.put(CacheFactory.ADMIN_CONFIG_SERVER_MAP, acManager);
 		}
+	}
+	
+	/**
+	 * Init PROD host and application level's config Info.  
+	 *
+	 * @throws Exception
+	 */
+	private void preparingHostConfigInfo() throws Exception {
+		
+		acManager.setHostAndApplicationProperties(hostConfigData);
 	}
 	
 	/**

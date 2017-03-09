@@ -18,6 +18,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.web.context.ServletContextAware;
 
+import com.superwebsitebuilder.applicationLevel.manager.AdminConfigManagerIfc;
 import com.superwebsitebuilder.espider.constant.Constants;
 import com.superwebsitebuilder.espider.constant.WebSiteLevelConstants;
 import com.superwebsitebuilder.espider.util.Utils;
@@ -50,6 +51,8 @@ public class InitLiveWebSiteListener implements InitializingBean, ServletContext
 	private static Log logger = LogFactory.getLog(InitLiveWebSiteListener.class);
 	@Resource
 	private CacheFactory cacheFactory;
+	@Resource
+	private AdminConfigManagerIfc acManager;
 	@Resource
 	private DAOFacade daoFacade;
 	
@@ -127,7 +130,7 @@ public class InitLiveWebSiteListener implements InitializingBean, ServletContext
 					//ws.setTableCatName((ws.getCode() + WebSiteLevelConstants.DB_CAT_SUFIX));
 					
 					// for init WebSite info.
-					ws.setDomainUrl(Utils.getDomainUrlByHostName(ws));
+					ws.setDomainUrl(Utils.getDomainUrlByHostName(ws, acManager));
 					ws.setIndexImage(Utils.getIndexImage(ws.getCode()));
 					ws.setThisYear(Utils.getThisYearStr());
 					ws.setIndexCreateDate(Utils.getNiceFormatTodayStr());

@@ -16,9 +16,13 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
+import com.superwebsitebuilder.applicationLevel.manager.AdminConfigManagerIfc;
 import com.superwebsitebuilder.espider.constant.Constants;
 import com.superwebsitebuilder.espider.constant.WebSiteLevelConstants;
+import com.superwebsitebuilder.platform.listener.InitSuperWebSiteApplicatLevelListener;
 import com.superwebsitebuilder.websitelevel.data.websitefunction.WebSiteData;
 
 /**
@@ -40,6 +44,9 @@ import com.superwebsitebuilder.websitelevel.data.websitefunction.WebSiteData;
  */
 
 public class Utils {
+	
+	/** Represents the logger field */
+	private static Log logger = LogFactory.getLog(Utils.class);
 	
 	/**
 	 * Update request string as allow characters only.  
@@ -399,17 +406,21 @@ public class Utils {
 	 * @param wsData
 	 * @return
 	 */
-	public static String getDomainUrlByHostName(WebSiteData wsData) {
+	public static String getDomainUrlByHostName(WebSiteData wsData, AdminConfigManagerIfc acManager) {
 		String domainUrl = Constants.EMPTY_STRING;
 		String osName = System.getProperty("os.name");
 		String hostName = getHostName(getInetAddress());
 		String hostIP = getHostIP(getInetAddress());
 		
+		logger.debug("hostIP =================================" + hostIP);
+		
 		if (checkNotEmpty(osName) && checkNotEmpty(hostName)) {
 			
 			if (osName.equalsIgnoreCase(WebSiteLevelConstants.Host_Linux)) {
 				// PROD host
-				if (hostName.equalsIgnoreCase(WebSiteLevelConstants.PROD_HOST_NAME)) {
+				if (hostName.equalsIgnoreCase(acManager.getHostAndApplicationProperty().getHostName()) 
+						&& hostIP.equalsIgnoreCase(acManager.getHostAndApplicationProperty().getHostIP())) {
+					
 					domainUrl = wsData.getDomainName();
 				
 				// local Linux ENV

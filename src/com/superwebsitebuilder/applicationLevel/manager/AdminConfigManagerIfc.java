@@ -8,6 +8,7 @@ package com.superwebsitebuilder.applicationLevel.manager;
 
 import java.util.List;
 
+import com.superwebsitebuilder.applicationLevel.data.websitefunction.HostConfigPropertyData;
 import com.superwebsitebuilder.applicationLevel.data.websitefunction.SensitiveWordData;
 
 /**
@@ -52,5 +53,22 @@ public interface AdminConfigManagerIfc extends ManagerIfc {
 	 * @return
 	 */
 	public boolean hasSensitiveWords(String queryWords);
+	
+	/**
+	 * Get PROD host and application property's value.
+	 * This property's value is sensitive host and application info.
+	 * 
+	 * @param propertyName
+	 * @return
+	 */
+	public HostConfigPropertyData getHostAndApplicationProperty();
+	
+	/**
+	 * Set PROD host and application property's value.
+	 * 
+	 * @param hostConfigData
+	 * @return
+	 */
+	public void setHostAndApplicationProperties(HostConfigPropertyData hostConfigData);
 	
 }

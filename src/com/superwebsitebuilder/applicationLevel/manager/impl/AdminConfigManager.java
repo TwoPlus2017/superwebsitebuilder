@@ -12,6 +12,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.superwebsitebuilder.applicationLevel.data.websitefunction.HostConfigPropertyData;
 import com.superwebsitebuilder.applicationLevel.data.websitefunction.SensitiveWordData;
 import com.superwebsitebuilder.applicationLevel.manager.AdminConfigManagerIfc;
 import com.superwebsitebuilder.espider.constant.Constants;
@@ -41,6 +42,9 @@ public class AdminConfigManager implements AdminConfigManagerIfc {
 	
 	/** Represents the sensitiveWords field */
 	private String[] sensitiveWords;
+	
+	/** Represents the hostData field */
+	private HostConfigPropertyData hostData;
 
 	/**
 	 * @see com.superwebsitebuilder.applicationLevel.manager.AdminConfigManagerIfc#getSensitiveWords()
@@ -97,6 +101,22 @@ public class AdminConfigManager implements AdminConfigManagerIfc {
 		}
 		
 		return has;
+	}
+
+	/**
+	 * @see com.superwebsitebuilder.applicationLevel.manager.AdminConfigManagerIfc#getHostAndApplicationProperty()
+	 */
+	@Override
+	public HostConfigPropertyData getHostAndApplicationProperty() {
+		return hostData;
+	}
+
+	/**
+	 * @see com.superwebsitebuilder.applicationLevel.manager.AdminConfigManagerIfc#setHostAndApplicationProperties(com.superwebsitebuilder.applicationLevel.data.websitefunction.HostConfigPropertyData)
+	 */
+	@Override
+	public void setHostAndApplicationProperties(HostConfigPropertyData hostConfigData) {
+		hostData = hostConfigData;
 	}
 
 }
