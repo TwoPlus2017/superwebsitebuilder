@@ -130,7 +130,7 @@ public class WebSiteLevelConstants extends Constants {
 	public static final String DB_ARTICLE_SUFIX = "_ARTICLE";
 	
 	/** Represents the HOST_NAME_GAVIN_CENTOSHOST field */
-	public static final String HOST_NAME_GAVIN_CENTOSHOST = "gavinhost";
+	public static final String PROD_HOST_NAME = "prod-host";
 	
 	/** Represents the Host_Linux field */
 	public static final String Host_Linux = "Linux";

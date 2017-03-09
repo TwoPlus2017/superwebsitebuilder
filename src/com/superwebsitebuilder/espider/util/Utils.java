@@ -403,22 +403,23 @@ public class Utils {
 		String domainUrl = Constants.EMPTY_STRING;
 		String osName = System.getProperty("os.name");
 		String hostName = getHostName(getInetAddress());
+		String hostIP = getHostIP(getInetAddress());
 		
 		if (checkNotEmpty(osName) && checkNotEmpty(hostName)) {
 			
 			if (osName.equalsIgnoreCase(WebSiteLevelConstants.Host_Linux)) {
 				// PROD host
-				if (hostName.equalsIgnoreCase(WebSiteLevelConstants.HOST_NAME_GAVIN_CENTOSHOST)) {
+				if (hostName.equalsIgnoreCase(WebSiteLevelConstants.PROD_HOST_NAME)) {
 					domainUrl = wsData.getDomainName();
 				
 				// local Linux ENV
 				} else {
-					domainUrl = Constants.LOCALHOST_NAME + ":" + wsData.getLocalPort();
+					domainUrl = hostIP + ":" + wsData.getLocalPort();
 				}
 				
 			} else {
 				// local Windows ENV
-				domainUrl = Constants.LOCALHOST_NAME + ":" + wsData.getLocalPort();
+				domainUrl = hostIP + ":" + wsData.getLocalPort();
 			}
 		}
 		
