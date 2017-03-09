@@ -7,14 +7,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>${feData.kwShowName} Related Questions | ${feData.webSiteData.indexTitleSufix}</title>
-    <link rel="icon" href="assets/images/favicon.png">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <link href="assets/webcss/site-responsive.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/owlslider/owl-carousel/owl.carousel.css" />
-    <link rel="stylesheet" href="assets/owlslider/owl-carousel/owl.template.css" />
+    <title>${feData.kwShowName} Search Result Page | ${feData.webSiteData.indexTitleSufix}</title>
+    <link rel="icon" href="http://${feData.osDomainUrl}/assets/images/favicon.png">
+    <link href="http://${feData.osDomainUrl}/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://${feData.osDomainUrl}/assets/css/style.css" rel="stylesheet" />
+    <link href="http://${feData.osDomainUrl}/assets/webcss/site-responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://${feData.osDomainUrl}/assets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="http://${feData.osDomainUrl}/assets/owlslider/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" href="http://${feData.osDomainUrl}/assets/owlslider/owl-carousel/owl.template.css" />
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -31,7 +31,7 @@
                     <h3 class="white-heading">${feData.kwShowName}</h3>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-12 colxs-12 capital">
-                    <h5>Article Info</h5>
+                    <h5>Search Result</h5>
                 </div>
             </div>
         </div>
@@ -105,16 +105,16 @@
     
     <%@include file="sections/footer.jsp" %>
     
-    <script type="text/javascript" src="assets/js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/select2.min.js"></script>
-    <script src="assets/tinymce/tinymce.min.js"></script>
-    <script type="text/javascript" src="assets/parallax.js-1.4.2/parallax.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/owlslider/owl-carousel/owl.carousel.js"></script>
-    <script type="text/javascript" src="assets/js/waypoints.min.js"></script>
-    <script type="text/javascript" src="assets/counter/jquery.counterup.min.js"></script>
-    <script src="assets/js/webjs.js"></script>
-    <script src="assets/js/own.js"></script>
+    <script type="text/javascript" src="http://${feData.osDomainUrl}/assets/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://${feData.osDomainUrl}/assets/js/select2.min.js"></script>
+    <script src="http://${feData.osDomainUrl}/assets/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="http://${feData.osDomainUrl}/assets/parallax.js-1.4.2/parallax.js"></script>
+    <script src="http://${feData.osDomainUrl}/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://${feData.osDomainUrl}/assets/owlslider/owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="http://${feData.osDomainUrl}/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://${feData.osDomainUrl}/assets/counter/jquery.counterup.min.js"></script>
+    <script src="http://${feData.osDomainUrl}/assets/js/webjs.js"></script>
+    <script src="http://${feData.osDomainUrl}/assets/js/own.js"></script>
 </body>
 
 </html>
