@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  ArticleManagerProxy.java
  * Purpose:   Article Manager Proxy to implement the article manager business functions.
  * Classes:   ArticleManagerProxy
@@ -31,7 +31,7 @@ import com.superwebsitebuilder.websitelevel.manager.impl.ArticleManager;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

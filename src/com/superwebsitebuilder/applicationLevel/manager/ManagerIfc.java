@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  ManagerIfc.java
  * Purpose:   The top Manager interface to provided some useful init data object for SWSB application running.
  * Classes:   ManagerIfc
@@ -18,7 +18,7 @@ package com.superwebsitebuilder.applicationLevel.manager;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

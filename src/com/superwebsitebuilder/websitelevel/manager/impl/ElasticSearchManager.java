@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  ElasticSearchManager.java
  * Purpose:   ES Manager implement to implement the ES search business functions.
  * Classes:   ElasticSearchManager
@@ -36,7 +36,7 @@ import com.superwebsitebuilder.websitelevel.manager.ElasticSearchManagerIfc;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

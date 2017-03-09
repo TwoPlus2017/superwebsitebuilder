@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  ContentPostManager.java
  * Purpose:   Post Manager of 'Content' to implement the 'Content' business functions.
  * Classes:   ContentPostManager
@@ -34,7 +34,7 @@ import com.superwebsitebuilder.websitelevel.manager.impl.PostManager;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

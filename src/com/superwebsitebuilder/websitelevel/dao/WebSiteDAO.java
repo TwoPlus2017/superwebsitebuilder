@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  WebSiteDAO.java
  * Purpose:   'WebSite' related business type DAO function interface.
  * Classes:   WebSiteDAO
@@ -22,7 +22,7 @@ import com.superwebsitebuilder.websitelevel.data.websitefunction.WebSiteData;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

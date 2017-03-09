@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  PostManagerProxy.java
  * Purpose:   Post Manager Proxy to implement the post manager business functions.
  * Classes:   PostManagerProxy
@@ -31,7 +31,7 @@ import com.superwebsitebuilder.websitelevel.manager.impl.PostManager;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

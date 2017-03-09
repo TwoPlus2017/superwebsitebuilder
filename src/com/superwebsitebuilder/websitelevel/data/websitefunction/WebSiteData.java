@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  WebSiteData.java
  * Purpose:   Data transfer object of 'WebSite' function.
  * Classes:   WebSiteData
@@ -24,7 +24,7 @@ import com.superwebsitebuilder.websitelevel.data.businesslogic.PostData;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  DAOFacade.java
  * Purpose:   The SWSB facade DAO object and include all SWSB application components DAO functions.
  * Classes:   DAOFacade
@@ -34,7 +34,7 @@ import com.superwebsitebuilder.websitelevel.data.websitefunction.WebSiteData;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

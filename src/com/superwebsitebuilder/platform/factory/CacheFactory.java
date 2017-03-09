@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  CacheFactory.java
  * Purpose:   SWSB application cache factory of SWSB application level.
  * Classes:   CacheFactory
@@ -23,7 +23,7 @@ import org.apache.commons.logging.LogFactory;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

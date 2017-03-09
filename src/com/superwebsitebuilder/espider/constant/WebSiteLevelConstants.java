@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  WebSiteLevelConstants.java
  * Purpose:   WebSite level constants of SWSB application.
  * Classes:   WebSiteLevelConstants
@@ -19,7 +19,7 @@ package com.superwebsitebuilder.espider.constant;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

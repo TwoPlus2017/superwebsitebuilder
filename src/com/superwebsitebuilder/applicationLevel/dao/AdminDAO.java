@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  AdminDAO.java
  * Purpose:   SWSB 'AdminConfig' business DAO function interface.
  * Classes:   AdminDAO
@@ -23,7 +23,7 @@ import com.superwebsitebuilder.applicationLevel.data.websitefunction.SensitiveWo
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

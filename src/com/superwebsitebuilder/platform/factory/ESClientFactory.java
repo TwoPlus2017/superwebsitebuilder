@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  ESTransportClientFactory.java
  * Purpose:   SWSB application object factory of ElasticSearch object.
  * Classes:   ESTransportClientFactory
@@ -32,7 +32,7 @@ import com.superwebsitebuilder.espider.constant.ESConstants;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

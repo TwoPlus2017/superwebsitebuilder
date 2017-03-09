@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  AdminConfigManagerIfc.java
  * Purpose:   SWSB AdminConfig Manager interface to provide SWSB application level business functions.
  * Classes:   AdminConfigManagerIfc
@@ -22,7 +22,7 @@ import com.superwebsitebuilder.applicationLevel.data.websitefunction.SensitiveWo
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

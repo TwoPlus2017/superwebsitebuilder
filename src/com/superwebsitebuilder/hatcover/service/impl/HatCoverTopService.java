@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  HatCoverTopService.java
  * Purpose:   'Hat Cover' business type top service and provide some function for service to use.
  * Classes:   HatCoverTopService
@@ -34,7 +34,7 @@ import com.superwebsitebuilder.websitelevel.manager.impl.PostManager;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

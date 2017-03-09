@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  FrontEndData.java
  * Purpose:   Data transfer object of 'FrontEnd' function.
  * Classes:   FrontEndData
@@ -24,7 +24,7 @@ import com.superwebsitebuilder.websitelevel.data.businesslogic.PostData;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

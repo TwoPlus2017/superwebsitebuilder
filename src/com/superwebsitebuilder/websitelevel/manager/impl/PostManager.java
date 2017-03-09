@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  PostManager.java
  * Purpose:   Post Manager implement to implement the post page business functions.
  * Classes:   PostManager
@@ -32,7 +32,7 @@ import com.superwebsitebuilder.websitelevel.manager.PostManagerIfc;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

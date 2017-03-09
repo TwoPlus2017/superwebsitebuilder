@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  PostManagerifc.java
  * Purpose:   Post Manager interface to provide post page business functions.
  * Classes:   PostManagerifc
@@ -24,7 +24,7 @@ import com.superwebsitebuilder.websitelevel.data.websitefunction.FrontEndData;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  KeyWordManager.java
  * Purpose:   Article Manager implement to implement the article page business functions.
  * Classes:   KeyWordManager
@@ -29,7 +29,7 @@ import com.superwebsitebuilder.websitelevel.manager.ArticleManagerIfc;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *

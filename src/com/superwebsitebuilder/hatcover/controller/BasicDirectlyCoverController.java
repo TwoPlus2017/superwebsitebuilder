@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  BasicDirectlyCoverController.java
  * Purpose:   This controller is used for 'Basic Directly Cover' of business type.
  * Classes:   BasicDirectlyCoverController
@@ -34,7 +34,7 @@ import com.superwebsitebuilder.websitelevel.data.websitefunction.FrontEndData;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *
