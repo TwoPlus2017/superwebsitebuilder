@@ -18,7 +18,7 @@
         <javac srcdir="${src}" destdir="${classes}" includeantruntime="false">
           <classpath refid="project.class.path" />
         </javac>
-    	<copy todir="${classes}">
+    	<copy todir="${classes}" overwrite="true" force="true">
     	  <fileset dir="${src}">
     	    <exclude name="**/*.java"/>
     	  </fileset>
