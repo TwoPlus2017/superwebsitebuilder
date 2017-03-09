@@ -60,9 +60,14 @@ public class BasicDirectlyCoverController {
     public String getIndexPage(@ModelAttribute("feData")FrontEndData feData) throws Exception {
 		logger.debug(MVCConstants.URL_HATCOVER + MVCConstants.SLASH + MVCConstants.URL_BASIC_COVER + MVCConstants.SLASH + MVCConstants.URL_SHOW_INDEX);
 		
-		if (WebSiteLevelConstants.INDEX_PAGE_QUERY.equals(feData.getQueryType())) {
-			basicDirectlyCoverSvc.getIndex(feData);
+		try {
+			if (WebSiteLevelConstants.INDEX_PAGE_QUERY.equals(feData.getQueryType())) {
+				basicDirectlyCoverSvc.getIndex(feData);
+			}
+		} catch (Exception e) {
+			logger.error(e);
 		}
+		
 		
         return MVCConstants.PAGE_HATCOVER_ROOT + feData.getReturnPage();
     }
