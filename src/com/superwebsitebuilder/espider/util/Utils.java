@@ -415,8 +415,6 @@ public class Utils {
 		String hostName = getHostName(getInetAddress());
 		String hostIP = getHostIP(getRealInetAddress());
 		
-		logger.debug("hostIP =================================" + hostIP);
-		
 		if (checkNotEmpty(osName) && checkNotEmpty(hostName)) {
 			
 			if (osName.equalsIgnoreCase(WebSiteLevelConstants.Host_Linux)) {
@@ -457,24 +455,27 @@ public class Utils {
 	
 	public static InetAddress getRealInetAddress() {
 		InetAddress inetAddress = null;
+		
         try {
-            Enumeration<NetworkInterface> networkInterfaces = NetworkInterface
-                    .getNetworkInterfaces();
+        	
+            Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
+            
             while (networkInterfaces.hasMoreElements()) {
-                NetworkInterface ni = (NetworkInterface) networkInterfaces
-                        .nextElement();
+                NetworkInterface ni = (NetworkInterface) networkInterfaces.nextElement();
                 Enumeration<InetAddress> nias = ni.getInetAddresses();
+                
                 while(nias.hasMoreElements()) {
-                    InetAddress ia= (InetAddress) nias.nextElement();
-                    if (!ia.isLinkLocalAddress() 
-                     && !ia.isLoopbackAddress()
-                     && ia instanceof Inet4Address) {
+                    InetAddress ia = (InetAddress) nias.nextElement();
+                    
+                    if (!ia.isLinkLocalAddress() && !ia.isLoopbackAddress() && ia instanceof Inet4Address) {
                     	inetAddress = ia;
                     }
                 }
             }
         } catch (SocketException e) {
+        	
         }
+        
         return inetAddress;
     }
 	

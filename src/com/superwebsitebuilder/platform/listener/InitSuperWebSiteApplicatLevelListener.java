@@ -88,7 +88,7 @@ public class InitSuperWebSiteApplicatLevelListener implements InitializingBean, 
 		
 		// Sensitive Words
 		List<SensitiveWordData> allSWData = daoFacade.getAllSensitiveWordsList();
-		if (Utils.checkNotNull(adminConfigMap) && Utils.checkNotNull(allSWData) && allSWData.size() > 0) {
+		if (Utils.checkNotNull(adminConfigMap) && Utils.checkNotNull(allSWData)) {
 			acManager.setSensitiveWords(allSWData);
 			
 			adminConfigMap.put(CacheFactory.ADMIN_CONFIG_SERVER_MAP, acManager);

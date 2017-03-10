@@ -158,6 +158,7 @@ public abstract class HatCoverTopService {
 		// K or S
 		if (WebSiteLevelConstants.KEY_WORD_QUERY.equals(feData.getQueryType()) || WebSiteLevelConstants.SEARCH_QUERY.equals(feData.getQueryType())) {
 			AdminConfigManagerIfc acManager = (AdminConfigManagerIfc)cacheFactory.getMapByKey(CacheFactory.ADMIN_CONFIG_MAP).get(CacheFactory.ADMIN_CONFIG_SERVER_MAP);
+			
 			returnDirect = acManager.hasSensitiveWords(feData.getKeyWord());
 		}
 		
