@@ -7,6 +7,8 @@
 
 package com.superwebsitebuilder.applicationLevel.data.websitefunction;
 
+import java.util.Properties;
+
 import org.springframework.beans.factory.annotation.Value;
 
 /**
@@ -29,6 +31,9 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class HostConfigPropertyData {
 	
+	@Value("#{propertiesSetting}")
+	private Properties allProps;
+	
 	/** Represents the hostName field */
 	@Value("#{propertiesSetting[host_name]}")
 	private String hostName;
@@ -36,6 +41,35 @@ public class HostConfigPropertyData {
 	/** Represents the hostIP field */
 	@Value("#{propertiesSetting[host_ip]}")
 	private String hostIP;
+
+	/**
+	 * Get property
+	 * @param key
+	 * @return
+	 */
+	public String getProperty(String key) {
+		return allProps.getProperty(key);
+	}
+	
+	/**
+	 * Set property value and return the previous value.
+	 * @param key
+	 * @param value
+	 * @return
+	 */
+	public Object setProperty(String key, String value) {
+        return allProps.setProperty(key, value);
+    }
+	
+	/**
+	 * Get property
+	 * @param key
+	 * @param defaultValue
+	 * @return
+	 */
+	public String getProperty(String key, String defaultValue) {
+		return allProps.getProperty(key, defaultValue);
+	}
 	
 	/**
 	 * @return the hostName
