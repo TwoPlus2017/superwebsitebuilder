@@ -9,6 +9,8 @@ package com.superwebsitebuilder.platform.factory;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+import javax.annotation.PreDestroy;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.elasticsearch.client.Client;
@@ -65,7 +67,6 @@ public class ESClientFactory {
 		try {
 			
 			tsClient = TransportClient.builder().build().addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(ESConstants.ServerIP), ESConstants.ServerPort));
-		
 		} catch (UnknownHostException e) {
 			logger.debug(e.getMessage());
 		}
@@ -80,6 +81,19 @@ public class ESClientFactory {
 		logger.debug("ESClientFactory --> getTSClientInstance()");
 		
 		return tsClient;
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		logger.debug("ESClientFactory --> destroy() start");
+		try {
+			if (tsClient != null) {
+				tsClient.close();
+			}
+		} catch (Exception e) {
+			logger.error(e);
+		}
+		logger.debug("ESClientFactory --> destroy() end");
 	}
 
 }

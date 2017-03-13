@@ -37,7 +37,7 @@
 		<property name="cronExpression" value="0 0 0/1 * * ?" />
 	</bean>
 	
-	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean" destroy-method="destroy">
 		<property name="triggers">
 			<list>
 				<ref bean="refreshAdminConfigTrigger"/>
@@ -45,6 +45,7 @@
 			</list>
 		</property>
 		<property name="autoStartup" value="true"/>
+		<property name="waitForJobsToCompleteOnShutdown" value="true" />
 	</bean>
 	
 </beans>
