@@ -16,6 +16,7 @@ import com.superwebsitebuilder.applicationLevel.data.websitefunction.HostConfigP
 import com.superwebsitebuilder.applicationLevel.data.websitefunction.SensitiveWordData;
 import com.superwebsitebuilder.applicationLevel.manager.AdminConfigManagerIfc;
 import com.superwebsitebuilder.espider.constant.Constants;
+import com.superwebsitebuilder.espider.util.Utils;
 
 /**
  * SWSB AdminConfig Manager implement to implement the SWSB application level business functions. <BR>
@@ -80,7 +81,7 @@ public class AdminConfigManager implements AdminConfigManagerIfc {
 	private boolean checkHasSensitiveWord(String queryWords) {
 		logger.debug("AdminConfigManager --> checkHasSensitiveWord()");
 		
-		if (StringUtils.indexOfAny(queryWords.toLowerCase(), sensitiveWords) >= 0) {
+		if (StringUtils.indexOfAny(Utils.getWords(queryWords.toLowerCase()), sensitiveWords) >= 0) {
 			return Constants.TRUE;
 		}
 		
