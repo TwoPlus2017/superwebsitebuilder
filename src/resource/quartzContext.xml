@@ -57,6 +57,7 @@
 			</list>
 		</property>
 		<property name="autoStartup" value="true"/>
+		<property name="waitForJobsToCompleteOnShutdown" value="true"/>
 	</bean>
 	
 </beans>

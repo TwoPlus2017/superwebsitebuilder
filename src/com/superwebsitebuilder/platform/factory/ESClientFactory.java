@@ -9,13 +9,14 @@ package com.superwebsitebuilder.platform.factory;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+import javax.annotation.PreDestroy;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
-
-import com.superwebsitebuilder.espider.constant.ESConstants;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  * SWSB application object factory of ElasticSearch object. <BR>
@@ -46,14 +47,13 @@ public class ESClientFactory {
 	/** Represents the tsClient field */
 	private Client tsClient;
 	
-	/**
-	* Creates a new ESClientFactory object.
-	*/
-	public ESClientFactory() {
-		logger.debug("ESClientFactory --> ESClientFactory()");
-		
-		init();
-	}
+	/** Represents the serverIP field */
+	@Value("#{esProps[serverIP]}")
+	private String serverIP;
+	
+	/** Represents the serverPort field */
+	@Value("#{esProps[serverPort]}")
+	private int serverPort;
 	
 	/**
 	 * Init method when this factory created. 
@@ -61,11 +61,8 @@ public class ESClientFactory {
 	 */
 	private void init() {
 		logger.debug("ESClientFactory --> init()");
-		
 		try {
-			
-			tsClient = TransportClient.builder().build().addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(ESConstants.ServerIP), ESConstants.ServerPort));
-		
+			tsClient = TransportClient.builder().build().addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(serverIP), serverPort));
 		} catch (UnknownHostException e) {
 			logger.debug(e.getMessage());
 		}
@@ -78,8 +75,50 @@ public class ESClientFactory {
 	 */
 	public Client getTSClientInstance() {
 		logger.debug("ESClientFactory --> getTSClientInstance()");
-		
+		if (tsClient == null) {
+			init();
+		}
 		return tsClient;
 	}
+	
+	@PreDestroy
+	public void destroy() {
+		logger.debug("ESClientFactory --> destroy() start");
+		try {
+			if (tsClient != null) {
+				tsClient.close();
+			}
+		} catch (Exception e) {
+			logger.error(e);
+		}
+		logger.debug("ESClientFactory --> destroy() end");
+	}
 
+	/**
+	 * @return the serverIP
+	 */
+	public String getServerIP() {
+		return serverIP;
+	}
+
+	/**
+	 * @param serverIP the serverIP to set
+	 */
+	public void setServerIP(String serverIP) {
+		this.serverIP = serverIP;
+	}
+
+	/**
+	 * @return the serverPort
+	 */
+	public int getServerPort() {
+		return serverPort;
+	}
+
+	/**
+	 * @param serverPort the serverPort to set
+	 */
+	public void setServerPort(int serverPort) {
+		this.serverPort = serverPort;
+	}
 }
