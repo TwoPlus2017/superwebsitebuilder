@@ -86,4 +86,17 @@ public class ArticleManagerProxy extends ArticleManager {
 		return relatedArticleList;
 	}
 
+	@Override
+	public List<ArticleData> getRandomHotArticlesObj(int counter) throws Exception {
+		logger.debug("HatCoverArticleManager --> getRandomHotArticlesObj()");
+
+		List<ArticleData> hotKWList = getRandomHotArticlesList(counter);
+		
+		if (Utils.checkNotNull(hotKWList) && hotKWList.size() > 0) {
+			formatArticleList(hotKWList);
+		}
+		
+		return hotKWList;
+	}
+
 }
