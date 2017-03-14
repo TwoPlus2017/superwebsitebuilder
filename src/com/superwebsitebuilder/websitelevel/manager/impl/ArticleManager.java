@@ -62,6 +62,21 @@ public abstract class ArticleManager extends Manager implements ArticleManagerIf
 		return kwList;
 	}
 	
+	protected List<ArticleData> getRandomHotArticlesList(int counter) throws Exception {
+		logger.debug("ArticleManager --> getRandomHotKeyWordArticlesList()");
+		
+		List<ArticleData> hotKWList = new ArrayList<ArticleData>();
+		List<ArticleData> tempList = daoFacade.getRandomHotArticlesList(counter);
+		
+		int pickupCounter = counter < tempList.size() ? counter : tempList.size();
+		
+		for (int i = 0; i < pickupCounter; i++) {
+			hotKWList.add(tempList.get(i));
+		}
+		
+		return hotKWList;
+	}
+	
 	/**
 	 * To format the data's looking to display. 
 	 *

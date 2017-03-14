@@ -41,6 +41,8 @@ public interface ArticleManagerIfc extends ManagerIfc {
 	 */
 	public List<ArticleData> getRandomArticlesObj(int counter) throws Exception;
 	
+	public List<ArticleData> getRandomHotArticlesObj(int counter) throws Exception;
+	
 	/**
 	 * Can get one related article list of one request article.  
 	 *

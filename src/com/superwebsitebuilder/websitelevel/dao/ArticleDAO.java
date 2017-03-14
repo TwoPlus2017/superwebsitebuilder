@@ -36,5 +36,7 @@ public interface ArticleDAO {
 	 * @return
 	 */
 	public List<ArticleData> getRandomKeyWordsList() throws Exception;
+	
+	public List<ArticleData> getRandomHotKeyWordsList(int counter) throws Exception;
 
 }

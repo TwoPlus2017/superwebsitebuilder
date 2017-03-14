@@ -37,11 +37,23 @@
 		<property name="cronExpression" value="0 0 0/1 * * ?" />
 	</bean>
 	
+	<bean id="refreshHotKWJob" class="com.superwebsitebuilder.platform.listener.InitHatCoverWebSiteListener"/>
+	<bean id="refreshHotKWJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="refreshHotKWJob"/>
+        <property name="targetMethod" value="preparingRandomHotKeyWordCache"/>
+        <property name="concurrent" value="false"/>
+	</bean>
+	<bean id="refreshHotKWTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="refreshHotKWJobDetail"/>
+		<property name="cronExpression" value="0 0 0/2 * * ?" />
+	</bean>
+	
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="triggers">
 			<list>
 				<ref bean="refreshAdminConfigTrigger"/>
 				<ref bean="updateHatCoverWebSiteRelatedArticleTrigger"/>
+				<ref bean="refreshHotKWTrigger"/>
 			</list>
 		</property>
 		<property name="autoStartup" value="true"/>

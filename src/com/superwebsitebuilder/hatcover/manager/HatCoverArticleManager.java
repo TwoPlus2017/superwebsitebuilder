@@ -56,6 +56,19 @@ public class HatCoverArticleManager extends ArticleManager {
 		return kwList;
 	}
 	
+	@Override
+	public List<ArticleData> getRandomHotArticlesObj(int counter) throws Exception {
+		logger.debug("HatCoverArticleManager --> getRandomHotKeyWordArticlesObj()");
+
+		List<ArticleData> hotKWList = getRandomHotArticlesList(counter);
+		
+		if (Utils.checkNotNull(hotKWList) && hotKWList.size() > 0) {
+			formatArticleList(hotKWList);
+		}
+		
+		return hotKWList;
+	}
+	
 	/**
 	 * @see com.superwebsitebuilder.websitelevel.manager.ArticleManagerIfc#getOneArticlePageRelatedArticles(com.superwebsitebuilder.websitelevel.data.websitefunction.FrontEndData)
 	 *
@@ -75,5 +88,7 @@ public class HatCoverArticleManager extends ArticleManager {
 		
 		return relatedArticleList;
 	}
+
+	
 
 }

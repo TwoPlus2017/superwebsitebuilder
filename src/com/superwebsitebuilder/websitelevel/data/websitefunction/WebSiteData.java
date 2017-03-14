@@ -166,6 +166,8 @@ public class WebSiteData {
 	/** Represents the randomArticlesList field */
 	private List<ArticleData> randomWSLevelArticlesList;
 	
+	private List<ArticleData> randomWSLevelHotArticlesList;
+	
 	/** Represents the randomWSLevelPostList field */
 	private List<PostData> randomWSLevelPostList;
 	
@@ -212,6 +214,7 @@ public class WebSiteData {
 		indexCreateDate = Constants.EMPTY_STRING;
 		businessType = Constants.EMPTY_STRING;
 		randomWSLevelArticlesList = null;
+		randomWSLevelHotArticlesList = null;
 		thisYear = Constants.EMPTY_STRING;
 		showName = Constants.EMPTY_STRING;
 		contentPostNum = Constants.EMPTY_STRING;
@@ -220,6 +223,20 @@ public class WebSiteData {
 		randomWSLevelPostList = null;
 	}
 	
+	/**
+	 * @return the randomWSLevelHotArticlesList
+	 */
+	public List<ArticleData> getRandomWSLevelHotArticlesList() {
+		return randomWSLevelHotArticlesList;
+	}
+
+	/**
+	 * @param randomWSLevelHotArticlesList the randomWSLevelHotArticlesList to set
+	 */
+	public void setRandomWSLevelHotArticlesList(List<ArticleData> randomWSLevelHotArticlesList) {
+		this.randomWSLevelHotArticlesList = randomWSLevelHotArticlesList;
+	}
+
 	/**
 	 * Getter for the property startYear.
 	 * 

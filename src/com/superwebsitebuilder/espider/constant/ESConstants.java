@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016 - 2017 YG Studio. All rights reserved.
+ * Copyright (C) 2016 - 2017 GB Studio. All rights reserved.
  * Filename:  ESConstants.java
  * Purpose:   ElasticSearch constants of SWSB application.
  * Classes:   ESConstants
@@ -18,7 +18,7 @@ package com.superwebsitebuilder.espider.constant;
  *
  * </PRE>
  *
- * @author Gavin.Zhang - YG Studio
+ * @author Gavin.Zhang - GB Studio
  *
  * @version 01.00.00
  *
@@ -27,7 +27,8 @@ package com.superwebsitebuilder.espider.constant;
 public class ESConstants {
 	
 	/** Represents the ServerIP field */
-	public static final String ServerIP = "127.0.0.1"; // ElasticSearch server IP
+	//public static final String ServerIP = "127.0.0.1"; // ElasticSearch server IP
+	public static final String ServerIP = "9.119.102.76"; // ElasticSearch server IP
 	
 	/** Represents the ServerPort field */
 	public static final int ServerPort = 9300; // port

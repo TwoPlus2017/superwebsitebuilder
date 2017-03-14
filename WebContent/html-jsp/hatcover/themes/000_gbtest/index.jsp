@@ -69,7 +69,7 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Top Day</a>
                                     <ul class="dropdown-menu">
-                                        <c:forEach items="${feData.webSiteData.randomWSLevelArticlesList}" var="item" varStatus="status" begin="12" end="17" step="1">
+                                        <c:forEach items="${feData.webSiteData.randomWSLevelHotArticlesList}" var="item" varStatus="status" begin="0" end="10" step="1">
 		                                    <li><a href="http://${feData.osDomainUrl}/${item.selfUrl}" title="${item.title}">${item.title}</a></li>
 		                                </c:forEach>
                                     </ul>

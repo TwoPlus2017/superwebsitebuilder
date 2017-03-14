@@ -71,6 +71,8 @@ public class InitHatCoverWebSiteListener implements InitializingBean, ServletCon
 
 			preparingRandomKeyWordCache();
 			
+			preparingRandomHotKeyWordCache();
+			
 		} catch (Exception e) {
 			logger.debug("InitHatCoverWebSiteListener --> setServletContext() --> " + e.getMessage());
 		}
@@ -92,6 +94,7 @@ public class InitHatCoverWebSiteListener implements InitializingBean, ServletCon
 				WebSiteData webSite = (WebSiteData)hatWebSiteMap.get(webSiteFlag);
 				List<ArticleData> kwList = hatCoverArticleManager.getRandomArticlesObj(ManagerIfc.RANDOM_COUNTER_60);
 				
+				// for WebSite header and footer
 				if (Utils.checkNotNull(kwList)) {
 					webSite.setRandomWSLevelArticlesList(kwList);
 					
@@ -104,6 +107,26 @@ public class InitHatCoverWebSiteListener implements InitializingBean, ServletCon
 					} catch (Exception e) {
 						continue;
 					}
+				}
+				
+				
+			}
+		}
+	}
+	
+	private void preparingRandomHotKeyWordCache() throws Exception {
+		logger.debug("InitHatCoverWebSiteListener --> preparingRandomHotKeyWordCache()");
+		
+		Map<String, Object> hatWebSiteMap = cacheFactory.getMapByKey(CacheFactory.HAT_COVER_WEBSITE_MAP);
+		
+		if (hatWebSiteMap.size() > 0) {
+			for (String webSiteFlag : hatWebSiteMap.keySet()) {
+				WebSiteData webSite = (WebSiteData)hatWebSiteMap.get(webSiteFlag);
+				List<ArticleData> hotKWList = hatCoverArticleManager.getRandomHotArticlesObj(ManagerIfc.RANDOM_COUNTER_10);
+				
+				// for WebSite hot key word
+				if (Utils.checkNotNull(hotKWList)) {
+					webSite.setRandomWSLevelHotArticlesList(hotKWList);
 				}
 			}
 		}

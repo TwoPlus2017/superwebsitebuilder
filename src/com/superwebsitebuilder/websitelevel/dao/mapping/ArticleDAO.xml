@@ -8,7 +8,15 @@
 		<result column="TITLE" 				property="title" 				javaType="string" jdbcType="VARCHAR" 				/>
 		<result column="SELF_URL" 			property="selfUrl" 				javaType="string" jdbcType="VARCHAR" 				/>
 	</resultMap>
-  
+	
+	<select id="getRandomHotKeyWordsList" parameterType="int" resultMap="randomKeyWordMap">
+		SELECT ID, TITLE, SELF_URL 
+		FROM SWSBT_KW_HOT
+		WHERE ID >= ((SELECT MAX(ID) FROM SWSBT_KW_HOT)-(SELECT MIN(ID) FROM SWSBT_KW_HOT)) * RAND() + (SELECT MIN(ID) FROM SWSBT_KW_HOT) 
+		AND ENABLED = 1 
+		LIMIT #{counter};
+	</select>
+	
 	<select id="getRandomKeyWordsList" resultMap="randomKeyWordMap">
 	SELECT ID, TITLE, SELF_URL FROM (
 		(SELECT ID, TITLE, SELF_URL 

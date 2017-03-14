@@ -78,6 +78,12 @@ public class DAOFacade {
 		return keyWordDAO.getRandomKeyWordsList();
 	}
 	
+	public List<ArticleData> getRandomHotArticlesList(int counter) throws Exception {
+		logger.debug("DAOFacade --> getRandomHotArticlesList()");
+		
+		return keyWordDAO.getRandomHotKeyWordsList(counter);
+	}
+	
 	/**
 	 * Get all sensitive words from DB.   
 	 *
