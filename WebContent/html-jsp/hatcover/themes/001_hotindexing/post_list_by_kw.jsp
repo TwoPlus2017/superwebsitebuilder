@@ -7,8 +7,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>${feData.postData.title} | ${feData.webSiteData.indexTitleSufix}</title>
-    <meta name="description" content="${feData.postData.description}">
+    <title>${feData.kwShowName} Related Questions | ${feData.webSiteData.indexTitleSufix}</title>
     <link rel="icon" href="assets/images/favicon.png">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
@@ -23,41 +22,58 @@
 </head>
 
 <body class="page-blog">
-	<%@include file="sections/header.jsp" %>
-	
+    <%@include file="sections/header.jsp" %>
+    
     <div class="container-fluid page-title">
         <div class="row blue-banner">
             <div class="container main-container">
-                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                    <h3 class="white-heading">404 Page</h3>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <h1 class="white-heading">${feData.kwShowName}</h1>
                 </div>
             </div>
         </div>
     </div>
-    <!--header section -->
-    <!--blog Lists-->
+    
     <div class="container-fluid white-bg blog-posts">
         <div class="row">
             <div class="container main-container">
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 posts-list">
-                    <div class="post" id="post-1">
+                	<c:forEach items="${feData.postList}" var="item" varStatus="status" begin="0" end="5" step="1">
+                    <div class="post col-md-12">
                         <div class="data-post">
-                            <h3>404 Page</h3>
-                            <p>Sorry The Page You Are Looking For Have Been Removed, Had Its Name Changed, Or Is Temporarily Unavailable.</p>
+                            <h3><a href="http://${feData.osDomainUrl}/${item.selfUrl}">${item.title}</a></h3>
+                            <p>${item.description}</p>
+                            <a href="http://${feData.osDomainUrl}/${item.selfUrl}" class="btn btn-getstarted bg-blue">Read More</a>
                         </div>
                     </div>
+                    </c:forEach>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="blog-sidebar">
-                    <div class="search-form-block widget ">
-                        <form class="search" name="indexForm" method="get" id="search">
-                            <div class="pull-left form-group col-lg-10 col-md-10 col-sm-10 col-xs-9">
-                                <input id="keyWord" type="search" name="" value="" placeholder="Enter Topic" />
+                    <%@include file="sections/aside.jsp" %>
+                    <div class="widget">
+                        <h3 class="widget-title">Recent post</h3>
+                        <div class="recent-post">
+                            <ul>
+                            	<c:forEach items="${feData.postList}" var="item" varStatus="status" begin="6" end="9" step="1">
+                                <li><a href="http://${feData.osDomainUrl}/${item.selfUrl}">${item.title}</a></li>
+                            	</c:forEach>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget ">
+                        <div class="container-fluid blue-banner">
+                            <div class="sidebar-fist">
+                            	<c:forEach items="${feData.postList}" var="item" varStatus="status" begin="0" end="0" step="1">
+                                <div class="">
+                                    <h3 class="white-heading">${item.title}</h3>
+                                </div>
+                                <div class=""><span class="call-us">${item.description}</span></div>
+                                <div class="">
+                                    <a href="http://${feData.osDomainUrl}/${item.selfUrl}" class="btn btn-getstarted bg-red">get now</a>
+                                </div>
+                                </c:forEach>
                             </div>
-                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-3 submit">
-                                <input type="submit" value="" onClick="javascript: goSearch();"/>
-                                <span class="glyphicon fa fa-search" aria-hidden="true"></span>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

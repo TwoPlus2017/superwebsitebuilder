@@ -29,7 +29,7 @@
         <div class="row blue-banner">
             <div class="container main-container">
                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                    <h3 class="white-heading">404 Page</h3>
+                    <h3 class="white-heading">${feData.postData.title}</h3>
                 </div>
             </div>
         </div>
@@ -42,23 +42,14 @@
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 posts-list">
                     <div class="post" id="post-1">
                         <div class="data-post">
-                            <h3>404 Page</h3>
-                            <p>Sorry The Page You Are Looking For Have Been Removed, Had Its Name Changed, Or Is Temporarily Unavailable.</p>
+                            <h3>${feData.postData.title}</h3>
+                            <p>${feData.postData.description}</p>
+                            <p>${feData.postData.url}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="blog-sidebar">
-                    <div class="search-form-block widget ">
-                        <form class="search" name="indexForm" method="get" id="search">
-                            <div class="pull-left form-group col-lg-10 col-md-10 col-sm-10 col-xs-9">
-                                <input id="keyWord" type="search" name="" value="" placeholder="Enter Topic" />
-                            </div>
-                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-3 submit">
-                                <input type="submit" value="" onClick="javascript: goSearch();"/>
-                                <span class="glyphicon fa fa-search" aria-hidden="true"></span>
-                            </div>
-                        </form>
-                    </div>
+                    <%@include file="sections/aside.jsp" %>
                 </div>
             </div>
         </div>
