@@ -122,7 +122,7 @@ public class InitHatCoverWebSiteListener implements InitializingBean, ServletCon
 		if (hatWebSiteMap.size() > 0) {
 			for (String webSiteFlag : hatWebSiteMap.keySet()) {
 				WebSiteData webSite = (WebSiteData)hatWebSiteMap.get(webSiteFlag);
-				List<ArticleData> hotKWList = hatCoverArticleManager.getRandomHotArticlesObj(ManagerIfc.RANDOM_COUNTER_10);
+				List<ArticleData> hotKWList = hatCoverArticleManager.getRandomHotArticlesObj(ManagerIfc.RANDOM_COUNTER_40);
 				
 				// for WebSite hot key word
 				if (Utils.checkNotNull(hotKWList)) {
