@@ -31,9 +31,6 @@
                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                     <h3 class="white-heading">${feData.postData.title}</h3>
                 </div>
-                <div class="col-lg-5 col-md-5 col-sm-12 colxs-12 capital">
-                    <h5>post details</h5>
-                </div>
             </div>
         </div>
     </div>
@@ -52,27 +49,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="blog-sidebar">
-                    <div class="search-form-block widget ">
-                        <form class="search" name="indexForm" method="get" id="search">
-                            <div class="pull-left form-group col-lg-10 col-md-10 col-sm-10 col-xs-9">
-                                <input id="keyWord" type="search" name="" value="" placeholder="Enter keywords" />
-                            </div>
-                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-3 submit">
-                                <input type="submit" value="" onClick="javascript: goSearch();"/>
-                                <span class="glyphicon fa fa-search" aria-hidden="true"></span>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="widget">
-                        <h3 class="widget-title">Archive</h3>
-                        <div class="post-list archive">
-                            <ul>
-                            	<c:forEach items="${feData.relatedArticleList}" var="item" varStatus="status">
-                                    <li><a href="http://${feData.osDomainUrl}/${item.selfUrl}">${item.title}</a></li>
-                                </c:forEach>
-                            </ul>
-                        </div>
-                    </div>
+                    <%@include file="sections/aside.jsp" %>
                 </div>
             </div>
         </div>
@@ -90,6 +67,7 @@
     <script type="text/javascript" src="assets/counter/jquery.counterup.min.js"></script>
     <script src="assets/js/webjs.js"></script>
     <script src="assets/js/own.js"></script>
+    <%@include file="sections/js.jsp" %>
 </body>
 
 </html>

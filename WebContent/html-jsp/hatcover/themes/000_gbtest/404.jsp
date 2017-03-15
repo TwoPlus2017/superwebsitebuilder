@@ -76,6 +76,7 @@
     <script type="text/javascript" src="assets/counter/jquery.counterup.min.js"></script>
     <script src="assets/js/webjs.js"></script>
     <script src="assets/js/own.js"></script>
+    <%@include file="sections/js.jsp" %>
 </body>
 
 </html>

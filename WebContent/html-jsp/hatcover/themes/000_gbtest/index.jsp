@@ -35,7 +35,7 @@
                 <nav class="navbar navbar-fixed-top">
                     <div class="container">
                         <div class="logo">
-                            <a href="http://${feData.osDomainUrl}/"><img src="assets/images/logo2.png" alt="Photo" /> </a>
+                            <a href="http://${feData.osDomainUrl}/"><img src="assets/images/logo2.png" alt="${feData.webSiteData.name}" /> </a>
                         </div>
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -48,12 +48,12 @@
                         <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
                                 <li class="dropdown">
-                                	<a href="http://${feData.osDomainUrl}/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="sr-only">(current)</span></a>
+                                	<a href="http://${feData.osDomainUrl}/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Top Month</a>
                                     <ul class="dropdown-menu">
-                                        <c:forEach items="${feData.webSiteData.randomWSLevelArticlesList}" var="item" varStatus="status" begin="0" end="5" step="1">
+                                        <c:forEach items="${feData.webSiteData.randomWSLevelHotArticlesList}" var="item" varStatus="status" begin="0" end="4" step="1">
 		                                    <li><a href="http://${feData.osDomainUrl}/${item.selfUrl}" title="${item.title}">${item.title}</a></li>
 		                                </c:forEach>
                                     </ul>
@@ -61,7 +61,7 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Top Week</a>
                                     <ul class="dropdown-menu">
-                                        <c:forEach items="${feData.webSiteData.randomWSLevelArticlesList}" var="item" varStatus="status" begin="6" end="11" step="1">
+                                        <c:forEach items="${feData.webSiteData.randomWSLevelHotArticlesList}" var="item" varStatus="status" begin="5" end="9" step="1">
 		                                    <li><a href="http://${feData.osDomainUrl}/${item.selfUrl}" title="${item.title}">${item.title}</a></li>
 		                                </c:forEach>
                                     </ul>
@@ -69,7 +69,7 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Top Day</a>
                                     <ul class="dropdown-menu">
-                                        <c:forEach items="${feData.webSiteData.randomWSLevelHotArticlesList}" var="item" varStatus="status" begin="0" end="10" step="1">
+                                        <c:forEach items="${feData.webSiteData.randomWSLevelHotArticlesList}" var="item" varStatus="status" begin="10" end="14" step="1">
 		                                    <li><a href="http://${feData.osDomainUrl}/${item.selfUrl}" title="${item.title}">${item.title}</a></li>
 		                                </c:forEach>
                                     </ul>
@@ -80,7 +80,7 @@
                 </nav>
                 <div class="container slogan">
                     <div class="col-lg-12">
-                        <h1 class="animated fadeInDown">Looking for Your Keywords Topic List</h1>
+                        <h1 class="animated fadeInDown">Looking for Your Hot Indexing List</h1>
                         <h3>${feData.webSiteData.indexTitleSufix}</h3>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
         <div class="row">
             <div class="container main-container">
                 <h3 class="text-center">Recent Post</h3>
-                <p class="text-center">Completely synergize resource sucking relationships via premier niche markets.</p>
+                <p class="text-center">Recent post from HotIndexing to view.</p>
             </div>
             <div class="container main-container posts-list">
             	<c:forEach items="${feData.webSiteData.randomWSLevelPostList}" var="item" varStatus="status" begin="0" end="0" step="1">
@@ -146,6 +146,7 @@
     <script type="text/javascript" src="assets/js/waypoints.min.js"></script>
     <script type="text/javascript" src="assets/counter/jquery.counterup.min.js"></script>
     <script src="assets/js/webjs.js"></script>
+    <%@include file="sections/js.jsp" %>
 </body>
 
 </html>
